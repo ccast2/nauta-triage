@@ -1,0 +1,16 @@
+{
+  "request": { "method": "GET", "url": "/containers/MSCU-LISBOA-NOTE" },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "container_id": "MSCU-LISBOA-NOTE",
+      "events": [
+        { "type": "gate_out", "date": "2026-05-18T09:00:00Z" },
+        { "type": "sail",     "date": "2026-05-21T06:00:00Z" }
+      ],
+      "eta": "2026-05-30",
+      "note": "Vessel delayed at LISBOA, ETA may shift."
+    }
+  }
+}

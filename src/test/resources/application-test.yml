@@ -1,0 +1,6 @@
+triage:
+  llm:
+    enabled: false
+  reconciliation:
+    worker-poll-interval-ms: 50
+    worker-enabled: false

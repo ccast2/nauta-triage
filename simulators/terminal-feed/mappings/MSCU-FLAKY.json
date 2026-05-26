@@ -1,0 +1,4 @@
+{
+  "request": { "method": "GET", "url": "/terminal/MSCU-FLAKY" },
+  "response": { "status": 503, "body": "service unavailable" }
+}

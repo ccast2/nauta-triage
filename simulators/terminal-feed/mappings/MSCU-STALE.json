@@ -1,0 +1,15 @@
+{
+  "request": { "method": "GET", "url": "/terminal/MSCU-STALE" },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "container_id": "MSCU-STALE",
+      "events": [
+        { "type": "gate_out", "date": "2025-12-28T08:30:00Z" },
+        { "type": "sail",     "date": "2026-01-01T05:30:00Z" }
+      ],
+      "eta": "2026-04-01"
+    }
+  }
+}

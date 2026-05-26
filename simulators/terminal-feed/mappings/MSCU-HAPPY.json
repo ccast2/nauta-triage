@@ -1,0 +1,15 @@
+{
+  "request": { "method": "GET", "url": "/terminal/MSCU-HAPPY" },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "container_id": "MSCU-HAPPY",
+      "events": [
+        { "type": "gate_out", "date": "2026-05-20T10:15:00Z" },
+        { "type": "sail",     "date": "2026-05-22T04:30:00Z" }
+      ],
+      "eta": "2026-06-15"
+    }
+  }
+}

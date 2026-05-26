@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/triage}
+    username: ${DB_USER:triage}
+    password: ${DB_PASSWORD:triage}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+triage:
+  auto-resolve-threshold: 0.80
+  default-source-freshness-ttl-minutes: 15
+  reconciliation:
+    worker-poll-interval-ms: 500
+    worker-batch-size: 25
+  llm:
+    enabled: ${LLM_ENABLED:true}
+    model: ${OPENAI_MODEL:gpt-4o-mini}
+    timeout-ms: 2000
+    api-key: ${OPENAI_API_KEY:}
+  simulators:
+    carrier-portal:
+      base-url: http://carrier-portal:8080
+      url-template: /containers/{containerId}
+    terminal-feed:
+      base-url: http://terminal-feed:8080
+      url-template: /terminal/{containerId}
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      source:
+        slidingWindowSize: 20
+        failureRateThreshold: 50
+        waitDurationInOpenState: 30s
+    instances:
+      llm:
+        slidingWindowSize: 30
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 60s
